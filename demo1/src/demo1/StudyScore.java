@@ -16,5 +16,6 @@ public class StudyScore {
 		} else if (score <= 100 && score >= 90) {
 			System.out.println("该学生成绩优秀");
 		}
+		//
 	}
 }
