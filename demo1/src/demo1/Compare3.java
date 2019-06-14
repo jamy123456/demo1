@@ -1,6 +1,6 @@
 package demo1;
 
-public class Compare3 {//找出最大值
+public class Compare3 {//
 	public static void main(String[] args) {
 		int a = 3, b = 9, c = 2;
 		if (a > b) {
