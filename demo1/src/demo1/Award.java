@@ -2,8 +2,7 @@ package demo1;
 
 public class Award {
     // 12345
-	public static void main(String[] args) {
-        //1234
+	public static void main(String[] args) {        
 		int yearNum = 7;
 		if (yearNum >= 8) {
 			System.out.println("年终奖为30000");
