@@ -3,7 +3,8 @@ package demo1;
 public class Award {
     //1234500000000000000000000000000000000000
 	public static void main(String[] args) {
-		//自己的修改
+		//别人的修改
+	    //自己的修改
 		int yearNum = 7;
 		if (yearNum >= 8) {
 			//00000000000000000000000000000000000000
