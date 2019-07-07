@@ -3,7 +3,6 @@ package demo1;
 public class Award {
     //12345999999999999999999999999999
 	public static void main(String[] args) {
-		//12345
 		int yearNum = 7;
 		if (yearNum >= 8) {
 			System.out.println("年终奖为30000");
