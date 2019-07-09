@@ -11,6 +11,7 @@ public class Award {
 		}else if (yearNum >= 5) {
 			System.out.println("年终奖为10000");
 		}else if (yearNum >= 3) {
+			 //添加别人的修改11111111111111111111111111111111111111111
 			System.out.println("年终奖为5000");
 		}else if (yearNum >= 1) {
 			System.out.println("年终奖为1000");
