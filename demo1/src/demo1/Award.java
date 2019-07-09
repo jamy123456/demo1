@@ -7,7 +7,7 @@ public class Award {
 	    //自己的修改
 		int yearNum = 7;
 		if (yearNum >= 8) {
-			//00000000000000000000000000000000000000
+			
 			System.out.println("年终奖为30000");
 		}else if (yearNum >= 5) {
 			System.out.println("年终奖为10000");
