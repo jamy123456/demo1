@@ -1,7 +1,7 @@
 package demo1;
 
 public class Award {
-    //123458888888888888888888888888888888888
+    //123457777777777777777777777777777777
 	public static void main(String[] args) {
 		int yearNum = 7;
 		if (yearNum >= 8) {
