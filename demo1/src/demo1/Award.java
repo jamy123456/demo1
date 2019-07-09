@@ -2,9 +2,7 @@ package demo1;
 
 public class Award {
     //12345
-	public static void main(String[] args) {
-		//别人的修改
-	    //自己的修改
+	public static void main(String[] args) {		
 		int yearNum = 7;
 		if (yearNum >= 8) {
 			//00000000000000000000000000000000000000
