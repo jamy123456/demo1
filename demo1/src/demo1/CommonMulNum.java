@@ -1,6 +1,7 @@
 package demo1;
 
 public class CommonMulNum {
+	 //11111111111111111111111111111111111111111111111111111
 	public static void main(String[] args) {
 		int i = 8;
 		System.out.print("3和7的公倍数有:");
