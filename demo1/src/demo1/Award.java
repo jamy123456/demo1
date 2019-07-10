@@ -13,5 +13,6 @@ public class Award {
 		}else if (yearNum >= 1) {
 			System.out.println("年终奖为1000");
 		}
+		 //添加别人的更新000000000000000000000000000000000000000000000000
 	}
 }
