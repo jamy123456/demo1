@@ -2,7 +2,6 @@ package demo1;
 
 public class Award {
 	public static void main(String[] args) {
-		//添加自己的更新999999999999999999999999999999999999
 		int yearNum = 7;
 		if (yearNum >= 8) {
 			System.out.println("年终奖为30000");
@@ -13,6 +12,5 @@ public class Award {
 		}else if (yearNum >= 1) {
 			System.out.println("年终奖为1000");
 		}
-		 //添加别人的更新000000000000000000000000000000000000000000000000
 	}
 }
