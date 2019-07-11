@@ -1,5 +1,6 @@
 package demo1;
 
+
 public class Award {
 	public static void main(String[] args) {
 		int yearNum = 7;
@@ -10,6 +11,7 @@ public class Award {
 		}else if (yearNum >= 3) {
 			System.out.println("年终奖为5000");
 		}else if (yearNum >= 1) {
+			 //添加注释
 			System.out.println("年终奖为1000");
 		}
 	}
