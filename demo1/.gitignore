@@ -1,1 +1,6 @@
 /bin/
+.classpath
+.project
+build.xml
+demo1.iml
+.settings
