@@ -1,6 +1,6 @@
 package demo1;
 
-public class NarcissisticNum1 {
+public class NarcissisticNum1 {//9999999999999999999999
 	public static void main(String[] args) {//计算三位数水仙花数的平均值
 		int i = 100, count = 0, m = 0;
 		System.out.println("三位数的水仙花数有:");
