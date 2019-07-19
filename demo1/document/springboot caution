@@ -1,0 +1,5 @@
+springboot项目注意事项：
+
+1.启动项目时如果报unable to start EmbeddedWebApplicationContext  due to miss EmbeddedServletContainnerFactory bean,把pom.xml文件中tomcat 的<scope>provided</scope>给注释掉即可！
+
+2.启动项目时如果报Could not open windows registry node Software/Javasoft/Prefs at root 0x80000002时，点击win+R后输入regedit，确认查看HKEY_CURRENT_USER/Software/Javasoft和HKEY_LOCAL_MACHINE/Software/Javasoft下有没有Prefs这个文件夹，如果没有添加即可！
