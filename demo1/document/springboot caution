@@ -1,5 +1,26 @@
 springboot项目注意事项：
 
-1.启动项目时如果报unable to start EmbeddedWebApplicationContext  due to miss EmbeddedServletContainnerFactory bean,把pom.xml文件中tomcat 的<scope>provided</scope>给注释掉即可！
+1.启动项目时如果报unable to start EmbeddedWebApplicationContext  due to miss EmbeddedServletContainnerFactory bean,
+  把pom.xml文件中tomcat 的<scope>provided</scope>给注释掉即可！
 
-2.启动项目时如果报Could not open windows registry node Software/Javasoft/Prefs at root 0x80000002时，点击win+R后输入regedit，确认查看HKEY_CURRENT_USER/Software/Javasoft和HKEY_LOCAL_MACHINE/Software/Javasoft下有没有Prefs这个文件夹，如果没有添加即可！
+2.启动项目时如果报Could not open windows registry node Software/Javasoft/Prefs at root 0x80000002时，
+  点击win+R后输入regedit，确认查看HKEY_CURRENT_USER/Software/Javasoft和HKEY_LOCAL_MACHINE/Software/Javasoft下有没有Prefs这个文件夹，如果没有添加即可！
+
+3.spring boot启动类只会扫描启动类当前包以及它以下的包,扫描不到和启动各类所在包并列的包,所以一般启动类放在包含所有类的根包下,确保能扫到所有的类,
+  如果是聚合项目,在启动类上加上注解@ComponentScan("包含整个项目路径"),如果@SpringBootApplication和@ComponentScan注解共存，那么@SpringBootApplication注解的扫描的作用将会失效，
+  也就是说不能够扫描启动类所在包以及子包了。因此，我们必须在@ComponentScan注解配置本工程需要扫描的包范围。
+
+4.maven的配置文件settings文件里除了配置镜像源mirror,本地库localRepository,还一定要加上profile,否则eclipse,intellj idea等工具无法找到settings文件,
+  导致无法下载项目所需要的jar包
+
+5.IDEA报错 java.lang.NoClassDefFoundError: javax/servlet/ServletContext,很显然，这是没有找到ServletContext类导致的,
+  这是因为Intellij idea集成maven引入jar包时scope设置的问题,仔细检查pom文件，发现问题出现在这个地方：
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <version>1.2.3.RELEASE</version>
+        <scope>provided</scope>
+    </dependency>
+  注释掉pom配置中的 <scope>provided</scope>      -->       <!--<scope>provided</scope>-->
+  这样问题就解决了,这可能是Intellij的一个bug，在使用spring-boot的时候，如果把某个引入的依赖设置为provided，
+  那么在Intellij启动时就会找不到相应的类。因此，此时需要把此项配置给注释掉，但是打包上线的时候并不需要这些依赖，那么在打包的时候就把注释打开，即可。
