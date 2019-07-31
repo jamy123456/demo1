@@ -13,7 +13,7 @@ public class ConcreteDecorator extends Decorator{
         super.operate();
         addMethod();
     }
-
+    // 添加扩展方法
     public void addMethod(){
         System.out.println("调用额外增加的方法");
     }

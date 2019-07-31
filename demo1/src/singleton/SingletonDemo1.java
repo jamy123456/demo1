@@ -10,7 +10,7 @@ public class SingletonDemo1 {
     }
 }
 
-// 饿汉式单例模式
+// 饿汉式单例模式,利用静态代块在类加载时就初始化实例
 class Singleton {
     Singleton(){}
 

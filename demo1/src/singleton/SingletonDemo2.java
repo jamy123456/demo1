@@ -10,7 +10,7 @@ public class SingletonDemo2 {
     }
 }
 
-// 饿汉式单例模式
+// 饿汉式单例模式,利用类的静态成员变量来初始化实例
 class Singleton2 {
     private Singleton2(){}
 
