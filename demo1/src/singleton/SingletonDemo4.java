@@ -9,9 +9,10 @@ public class SingletonDemo4 {
         System.out.println("s2.hashCode ="+ s2.hashCode());
     }
 }
-// 懒汉式单例,这种方式创建不仅效率高而且是多线程安全的
+// 懒汉式单例,双重效验,这种方式创建不仅效率高而且是多线程安全的
 class Singleton4 {
-    private static Singleton4 instance;
+    // volatile关键字,可以让所有线程都能看到共享内存的最新状态
+    private static volatile Singleton4 instance;
 
     private Singleton4(){}
 
