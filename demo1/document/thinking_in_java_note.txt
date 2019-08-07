@@ -1,4 +1,4 @@
-thinking in java 笔记
+java 笔记
 
 1. 每个对象都有它自己的由其他对象所构成的存储
 
@@ -18,4 +18,32 @@ thinking in java 笔记
 
 6. 接口确定了某一特定对象所能发出的请求
 
-7. 控制访问修饰符:   public > protected > (default) > private 
+7. 控制访问修饰符:   public > protected > (default) > private
+
+8. 解锁表的命令: call sysproc.admin_cmd('reorg table 表名')
+
+9. Comparision method violates its general contract!!!
+   Collections 的sort方法里面重写的compare方法要遵循三原则:
+      (1) compare(x, y) == - compare(y, x)
+      (2) compare(x, y) > 0 && compare(y, z) > 0 ==>  compzre(x, z) > 0
+      (3) compare(x, y) = 0 ==> compare(x, z) == compare(y, z)
+      该异常发生的背景是当调用Collections.sort方法时,集合内元素出现相同或相等的元素,原因是在重写compare方法时没有考虑到相等的情况
+      例如 if (x > y){
+             return 1;
+           } else {
+             return -1;
+           }
+           虽然将x = y 的情况放在了else里面,但是这里违反了compare(x, y) = - compare(y, x)原则
+      解决方法:
+      if (x.compare(y) != 0){
+          return x.compare(y);
+      }else{
+          return -(y.compare(x));
+      }
+
+10. 序列化和反序列化:
+    序列化就是把对象转化成二进制流保存在磁盘上或是用于网络传输
+    反序列化就是将二进制流转化成对象
+    transient关键字是可以关闭某些敏感字段的序列化,例如密码
+
+
