@@ -21,4 +21,23 @@
    如果一个子类同时继承了一个父类,又实现了接口,并且父类和接口都有一个default方法,这时是类优先原则,接口中的default方法被自动屏蔽
    如果一个子类实现了两个接口,并且接口都有一个default方法,那么需要手动指定子类重写那个方法,计算机无法自动实现重写
 
-3. 四大内置函数式接口:
+3. 四大内置函数式接口:(都是对lambda表达式的进一步应用)
+   (1) Consumer<T> 消费型接口
+        accept(T t);
+
+   (2) Supplier<T> 供给型接口
+        T get();
+
+   (3) Function<T,R> 函数型接口
+        R apply(T t);
+
+   (4)Predicate<T> 断言型接口
+       boolean test(T t);
+
+4. 多线程安全的日期时间API
+   LocalDate   LocalTime   LocalDateTime
+
+5. Optional容器
+    快速锁定开始出现空指针的地方
+
+6. Stream
