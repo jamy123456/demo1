@@ -1,0 +1,49 @@
+java 笔记
+
+1. 每个对象都有它自己的由其他对象所构成的存储
+
+2. 接口(interface)其实就是约束了对象行为的特定类型
+
+3. 最简单的复用某个类的方式就是使用该类的一个对象,新类的成员对象通常被声明为private,这样就可以使得客户端程序员不能访问他们.
+
+4. 面向对象编程的5个特性:(类是对象的模板,对象是类的具体实例)
+
+  (1)万物皆是对象
+  (2)程序是对象的集合
+  (3)每个对象都有它自己的由其他对象所构成的存储
+  (4)每个对象都拥有其类型
+  (5)某一特定类型的所有对象都能接受同样的消息
+
+5. Java三大特性: 封装,继,多肽
+
+6. 接口确定了某一特定对象所能发出的请求
+
+7. 控制访问修饰符:   public > protected > (default) > private
+
+8. 解锁表的命令: call sysproc.admin_cmd('reorg table 表名')
+
+9. Comparision method violates its general contract!!!
+   Collections 的sort方法里面重写的compare方法要遵循三原则:
+      (1) compare(x, y) == - compare(y, x)
+      (2) compare(x, y) > 0 && compare(y, z) > 0 ==>  compzre(x, z) > 0
+      (3) compare(x, y) = 0 ==> compare(x, z) == compare(y, z)
+      该异常发生的背景是当调用Collections.sort方法时,集合内元素出现相同或相等的元素,原因是在重写compare方法时没有考虑到相等的情况
+      例如 if (x > y){
+             return 1;
+           } else {
+             return -1;
+           }
+           虽然将x = y 的情况放在了else里面,但是这里违反了compare(x, y) = - compare(y, x)原则
+      解决方法:
+      if (x.compare(y) != 0){
+          return x.compare(y);
+      }else{
+          return -(y.compare(x));
+      }
+
+10. 序列化和反序列化:
+    序列化就是把对象转化成二进制流保存在磁盘上或是用于网络传输
+    反序列化就是将二进制流转化成对象
+    transient关键字是可以关闭某些敏感字段的序列化,例如密码
+
+

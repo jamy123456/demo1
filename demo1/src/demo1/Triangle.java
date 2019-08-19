@@ -9,7 +9,9 @@ public class Triangle {
 			System.out.println();
 		}
 		System.out.println();
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 1; i <= 5; i++) {{
+        System.out.println("执行构造代码块!!!");
+    }
 			for (int j = 1; j <= 6 - i; j++) {
 				System.out.print(j);
 			}
