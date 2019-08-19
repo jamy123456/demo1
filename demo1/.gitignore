@@ -15,4 +15,10 @@ dependency-reduced-pom.xml
 .idea
 *.iml
 README.html
+/bin/
+.classpath
+.project
+build.xml
+demo1.iml
+.settings
 
