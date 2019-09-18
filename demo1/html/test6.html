@@ -16,15 +16,15 @@
     <p>剩余字数:{{getNum()}}</p>
     <script type="text/javascript">
         angular.module('myApp', [])
-            .controller('myController', function($scope){
-                $scope.message = '';
-                $scope.getNum = function () {
-                    if ($scope.message.length > 100) {
-                        $scope.message = $scope.message.slice(0, 100);
+            .controller('myController', ['$scope', function(a){
+                a.message = '';
+                a.getNum = function () {
+                    if (a.message.length > 100) {
+                        a.message = a.message.slice(0, 100);
                     }
-                    return 100 - $scope.message.length;
+                    return 100 - a.message.length;
                 }
-            });
+            }]);
     </script>
 </body>
 </html>
