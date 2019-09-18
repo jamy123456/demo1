@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script type="text/javascript" src="angular.js"></script>
-</head>
-<body ng-app="myApp" ng-controller="myController">
-<div >1 + 1 = {{1+1}}</div>
-<div>{{10/2}}</div>
-<div><input type="text" maxlength="5"  ng-model="name"/></div>
-<div>{{name}}</div>
-<div>{{'hello world!!'}}</div>
-<div >{{'welcome to the ' + ' city of beijing!!!'}}</div>
-<div>{{true  || false}}</div>
-<div>价格:<input type="text" ng-model="price"></div>
-<div>数量:<input type="text" ng-model="num"></div>
-<div>总价:{{getCal()}}</div>
-<script type="text/javascript">
-    angular.module('myApp', [])
-            .controller('myController', ['$scope', function (a) {
-                a.getCal = function() {
-                    if (a.price == null || a.num == null) {
-                        return;
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="angular.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myController">
+        <div >1 + 1 = {{1+1}}</div>
+        <div>{{10/2}}</div>
+        <div><input type="text" maxlength="5"  ng-model="name"/></div>
+        <div>{{name}}</div>
+        <div>{{'hello world!!'}}</div>
+        <div >{{'welcome to the ' + ' city of beijing!!!'}}</div>
+        <div>{{true  || false}}</div>
+        <div>价格:<input type="text" ng-model="price"></div>
+        <div>数量:<input type="text" ng-model="num"></div>
+        <div>总价:{{getCal()}}</div>
+        <script type="text/javascript">
+            angular.module('myApp', [])
+                .controller('myController', ['$scope', function (a) {
+                    a.getCal = function() {
+                        if (a.price == null || a.num == null) {
+                            return;
+                        }
+                        return a.price * a.num;
                     }
-                    return a.price * a.num;
-                }
-            }]);
-</script>
-</body>
+                }]);
+        </script>
+    </body>
 </html>
