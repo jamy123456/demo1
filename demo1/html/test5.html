@@ -19,8 +19,8 @@
     </div>
     <script type="text/javascript">
         angular.module('myApp', [])
-            .controller('myController', function ($scope) {
-               $scope.todos = [{
+            .controller('myController', ['$scope', function (a) {
+               a.todos = [{
                    'name' : '大熊猫',
                    'isChecked' : false
                },{
@@ -31,29 +31,29 @@
                    'isChecked' : true
                }];
                // 添加
-               $scope.add = function() {
-                   if (!$scope.newName) {
+               a.add = function() {
+                   if (!a.newName) {
                        return;
                    }
                    var obj = {
-                       'name' : $scope.newName,
+                       'name' : a.newName,
                        'isChecked' : false
                    };
-                   $scope.todos.unshift(obj);
-                   $scope.newName = '';
+                   a.todos.unshift(obj);
+                   a.newName = '';
                }
 
                // 删除
-                $scope.delete = function (){
-                   $scope.oldTodos = $scope.todos;
-                   $scope.todos = [];
-                   $scope.oldTodos.forEach(function(item){
+                a.delete = function (){
+                   a.oldTodos = a.todos;
+                   a.todos = [];
+                   a.oldTodos.forEach(function(item){
                        if (!item.isChecked) {
-                           $scope.todos.push(item);
+                           a.todos.push(item);
                        }
                    })
                 }
-            });
+            }]);
     </script>
 </body>
 </html>
