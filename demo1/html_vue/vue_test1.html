@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Vue.js</title>
     <script type="text/javascript" src="vue.js"></script>
+    <link rel="stylesheet" href="myDiv.css"></link>
 </head>
 <body>
     <div id="v-app">
@@ -12,6 +13,9 @@
         <button v-on:click="add(10)">涨十岁</button>
         <button v-on:click="sub(1)">减一岁</button>
         <button v-on:click="sub(10)">减十岁</button>
+        <div id="myDiv"  v-on:mousemove="updateXY">
+            {{x}},{{y}}
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
