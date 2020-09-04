@@ -1,0 +1,7 @@
+#上传本地项目至gitee仓库步骤:
+cd 项目根目录
+git init
+git add
+git commit -m "提交注释"
+git remote add origin 仓库地址(https://gitee.com/jamysong/demo2.git)
+git push -u origin master

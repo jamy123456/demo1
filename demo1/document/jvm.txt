@@ -1,0 +1,9 @@
+jvm的堆内存结构分为新生代和老年代,老年代主要是用来存放那些比较大或是存活时间比较长的对像,新生代顾名思义主要是用来存放新创建的对象
+,而它又细划分为三个区,分别是Eden区,From Survivor区和To Survivor区,新new出来的对象主要存放Eden区,当发生一次GC后,Eden区里面对
+像会被复制到To Survivor区,From Survivor区里面的对象也会被复制到To Survivor区,然后Eden区和From Survivor区会被清空,因为在发生
+下一次GC时,To Survivor区需要保证是空的,所以To Survivor区和From Survivor的名字会发生交换,这样就保证了To Survivor是空的了,另
+外经过多次GC后还幸存下来的对象就会被复制到老年代区了
+
+
+1.为什么对象在新生代中来回的复制,而不是直接将死的对象清除,或是复制到老年代呢?
+这样的目的是为了减少内存碎片

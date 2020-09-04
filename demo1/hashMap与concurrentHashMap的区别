@@ -1,0 +1,28 @@
+hashTable与hashMap的区别(jdk1.8之前都是数组+单向链表,1.8以后开始是数组+单向链表+红黑树的机构)
+
+1. 线程安全
+hashMap是线程不安全的,在单线程下可以尽情使用
+hashTable是线程安全的,他在操作数据的时候会锁上整个hashTable,效率低
+
+2.存放null的键值对
+hashMap可以
+hashTable不可以
+
+3.初始容量
+hashMap是16,达到阀值75%会进行翻倍扩容
+hashTable是11,达到阀值75%后会进行翻倍+1扩容
+
+4.计算哈希
+待查看源码
+
+5.继承类
+hashMap实现了Map接口,继承了AbstractMap
+hashTable实现了Map接口,继承了Dictionary类
+
+=================================================================
+hashTable与concurrentMap虽然都是线程安全的,
+concurrentHashMap通过把整个Map分为N个Segment，允许多个修改操作并发进行,
+可以提供相同的线程安全，但是效率提升N倍，默认提升16倍。
+(读操作不加锁，由于HashEntry的value变量是 volatile的，也能保证读取到最新的值。)
+hashTable每次操作是针对每张哈希表,会锁住整张表让线程独占,这样做虽然也能达到线程,但效率低下
+
